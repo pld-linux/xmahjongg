@@ -53,12 +53,12 @@ dorwhite, small, thin). Wywo³uje siê je za pomoc± parametru '-t'.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install $RPM_BUILD_ROOT{%{_desktopsdir},%{_pixmapsdir}}
+install $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopsdir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -68,5 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) %{_bindir}/xmahjongg
+%{_pixmapsdir}/*
+%{_desktopdir}/*
 %{_mandir}/man6/xmahjongg.6*
 %{_datadir}/%{name}
