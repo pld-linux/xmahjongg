@@ -6,11 +6,13 @@ Release:	1
 License:	GPL
 Vendor:		Little Cambridgeport Design Factory
 Group:		X11/Applications/Games
-URL:		http://www.lcdf.org/xmahjongg/
 Source0:	http://www.lcdf.org/xmahjongg/%{name}-%{version}.tar.gz
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+URL:		http://www.lcdf.org/xmahjongg/
 BuildRequires:	XFree86-devel
-
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libstdc++-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -43,20 +45,22 @@ rm -f missing
 %{__autoheader}
 %{__autoconf}
 %{__automake}
-CFLAGS="%{rpmcflags}" ./configure --datadir=%{_datadir}
+%configure
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir} $RPM_BUILD_ROOT%{_mandir}/man6
-install -c -s xmahjongg $RPM_BUILD_ROOT%{_bindir}/xmahjongg
-install -c xmahjongg.6 $RPM_BUILD_ROOT%{_mandir}/man6/xmahjongg.6
-%{__make} pkgdatadir="$RPM_BUILD_ROOT%{_datadir}/%{name}" install-share
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man6}
+
+install xmahjongg $RPM_BUILD_ROOT%{_bindir}/xmahjongg
+install xmahjongg.6 $RPM_BUILD_ROOT%{_mandir}/man6/xmahjongg.6
+
+%{__make} install-share \
+	pkgdatadir="$RPM_BUILD_ROOT%{_datadir}/%{name}"
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post
 
 %files
 %defattr(644,root,root,755)
