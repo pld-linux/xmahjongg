@@ -7,6 +7,7 @@ License:	GPL
 Vendor:		Little Cambridgeport Design Factory
 Group:		X11/Applications/Games
 Source0:	http://www.lcdf.org/xmahjongg/%{name}-%{version}.tar.gz
+# Source0-md5:	d8367caefbdae8e10c48593d17c342ae
 URL:		http://www.lcdf.org/xmahjongg/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
