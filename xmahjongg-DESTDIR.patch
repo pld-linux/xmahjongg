@@ -1,0 +1,33 @@
+--- xmahjongg-3.6.1/Makefile.am.orig	2001-08-21 17:58:40.000000000 +0200
++++ xmahjongg-3.6.1/Makefile.am	2004-04-12 20:47:41.144305584 +0200
+@@ -106,21 +106,21 @@
+ BACKGROUNDS = default.gif green.gif
+ 
+ install-share:
+-	$(mkinstalldirs) $(pkgdatadir)/layouts $(pkgdatadir)/tiles $(pkgdatadir)/backgrounds
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/layouts $(DESTDIR)$(pkgdatadir)/tiles $(DESTDIR)$(pkgdatadir)/backgrounds
+ 	for i in $(LAYOUTS); do \
+-	$(INSTALL_DATA) $(srcdir)/share/layouts/$$i $(pkgdatadir)/layouts; done
++	$(INSTALL_DATA) $(srcdir)/share/layouts/$$i $(DESTDIR)$(pkgdatadir)/layouts; done
+ 	for i in $(TILESETS); do \
+-	$(INSTALL_DATA) $(srcdir)/share/tiles/$$i $(pkgdatadir)/tiles; done
++	$(INSTALL_DATA) $(srcdir)/share/tiles/$$i $(DESTDIR)$(pkgdatadir)/tiles; done
+ 	for i in $(BACKGROUNDS); do \
+-	$(INSTALL_DATA) $(srcdir)/share/backgrounds/$$i $(pkgdatadir)/backgrounds; done
++	$(INSTALL_DATA) $(srcdir)/share/backgrounds/$$i $(DESTDIR)$(pkgdatadir)/backgrounds; done
+ install-data-local: install-share
+ 
+ uninstall-local:
+-	-cd $(pkgdatadir)/layouts; rm -f $(LAYOUTS)
+-	-cd $(pkgdatadir)/tiles; rm -f $(TILESETS)
+-	-cd $(pkgdatadir)/backgrounds; rm -f $(BACKGROUNDS)
+-	-rmdir $(pkgdatadir)/layouts $(pkgdatadir)/tiles $(pkgdatadir)/backgrounds
+-	-rmdir $(pkgdatadir)
++	-cd $(pkgdatadir)/layouts; rm -f $(DESTDIR)$(LAYOUTS)
++	-cd $(pkgdatadir)/tiles; rm -f $(DESTDIR)$(TILESETS)
++	-cd $(pkgdatadir)/backgrounds; rm -f $(DESTDIR)$(BACKGROUNDS)
++	-rmdir $(pkgdatadir)/layouts $(DESTDIR)$(pkgdatadir)/tiles $(DESTDIR)$(pkgdatadir)/backgrounds
++	-rmdir $(DESTDIR)$(pkgdatadir)
+ 
+ 
+ #
