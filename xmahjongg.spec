@@ -2,12 +2,14 @@ Summary:	Colorful X solitaire Mah Jongg game
 Summary(pl):	Komputerowy Mad¿ong
 Name:		xmahjongg
 Version:	3.6.1
-Release:	1
+Release:	2
 License:	GPL
 Vendor:		Little Cambridgeport Design Factory
 Group:		X11/Applications/Games
 Source0:	http://www.lcdf.org/xmahjongg/%{name}-%{version}.tar.gz
 # Source0-md5:	d8367caefbdae8e10c48593d17c342ae
+Source1:	%{name}.desktop
+Source2:	%{name}.png
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.lcdf.org/xmahjongg/
 BuildRequires:	XFree86-devel
@@ -51,8 +53,13 @@ dorwhite, small, thin). Wywo³uje siê je za pomoc± parametru '-t'.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install $RPM_BUILD_ROOT{%{_desktopsdir},%{_pixmapsdir}}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopsdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
