@@ -8,15 +8,13 @@ Vendor:		Little Cambridgeport Design Factory
 Group:		X11/Applications/Games
 Source0:	http://www.lcdf.org/xmahjongg/%{name}-%{version}.tar.gz
 # Source0-md5:	d8367caefbdae8e10c48593d17c342ae
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.lcdf.org/xmahjongg/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Real Mah Jongg is a social game that originated in China thousands of
@@ -39,9 +37,9 @@ dorwhite, small, thin). Wywo³uje siê je za pomoc± parametru '-t'.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoheader}
 %{__autoconf}
@@ -52,13 +50,9 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man6}
 
-install xmahjongg $RPM_BUILD_ROOT%{_bindir}/xmahjongg
-install xmahjongg.6 $RPM_BUILD_ROOT%{_mandir}/man6/xmahjongg.6
-
-%{__make} install-share \
-	pkgdatadir="$RPM_BUILD_ROOT%{_datadir}/%{name}"
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
