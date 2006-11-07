@@ -67,6 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc NEWS README
 %attr(755,root,root) %{_bindir}/xmahjongg
 %{_pixmapsdir}/*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_mandir}/man6/xmahjongg.6*
 %{_datadir}/%{name}
