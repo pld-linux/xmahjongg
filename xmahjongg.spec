@@ -1,5 +1,5 @@
 Summary:	Colorful X solitaire Mah Jongg game
-Summary(pl):	Komputerowy Mad¿ong
+Summary(pl.UTF-8):   Komputerowy MadÅ¼ong
 Name:		xmahjongg
 Version:	3.7
 Release:	1
@@ -26,15 +26,15 @@ pleasantly when you knock them together. Computer Solitaire Mah Jongg
 it's fun, or it must be, since there are like 300 shareware versions
 available for Windows. This is for X11 and it's free.
 
-%description -l pl
-Stara, chiñska gra logiczna. Powsta³a ona w staro¿ytnym Pañstwie
-¦rodka, a jej historia siêga chiñskiej dynastii Zachodniego Chou,
-czyli ok. 720 roku n.e. Podobnie jak wiêkszo¶æ gier karcianych tak i
-mad¿ong rozwija³ siê niezale¿nie w ró¿nych okrêgach i prowincjach
-dawnych Chin, zyskuj±c niezliczone odmiany dla ró¿nej liczby
-graj±cych. Ta wersja przeznaczona jest dla jednej osoby i zawiera
-kilka ró¿nych zestawów klocków (dorothys, gnome, gnome2, real, thick,
-dorwhite, small, thin). Wywo³uje siê je za pomoc± parametru '-t'.
+%description -l pl.UTF-8
+Stara, chiÅ„ska gra logiczna. PowstaÅ‚a ona w staroÅ¼ytnym PaÅ„stwie
+Åšrodka, a jej historia siÄ™ga chiÅ„skiej dynastii Zachodniego Chou,
+czyli ok. 720 roku n.e. Podobnie jak wiÄ™kszoÅ›Ä‡ gier karcianych tak i
+madÅ¼ong rozwijaÅ‚ siÄ™ niezaleÅ¼nie w rÃ³Å¼nych okrÄ™gach i prowincjach
+dawnych Chin, zyskujÄ…c niezliczone odmiany dla rÃ³Å¼nej liczby
+grajÄ…cych. Ta wersja przeznaczona jest dla jednej osoby i zawiera
+kilka rÃ³Å¼nych zestawÃ³w klockÃ³w (dorothys, gnome, gnome2, real, thick,
+dorwhite, small, thin). WywoÅ‚uje siÄ™ je za pomocÄ… parametru '-t'.
 
 %prep
 %setup -q
