@@ -1,5 +1,5 @@
 Summary:	Colorful X solitaire Mah Jongg game
-Summary(pl.UTF-8):   Komputerowy Madżong
+Summary(pl.UTF-8):	Komputerowy Madżong
 Name:		xmahjongg
 Version:	3.7
 Release:	1
