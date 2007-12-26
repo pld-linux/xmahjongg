@@ -2,10 +2,9 @@
 Name=Xmahjongg
 Comment=Colorful solitaire Mah Jongg game
 Comment[pl]=Kolorowa układanka Mah Jongg
-Icon=xmahjongg.png
+Icon=xmahjongg
 Exec=xmahjongg
 Terminal=false
 Type=Application
-Encoding=UTF-8
 Categories=Game;BoardGame;
 # vi: encoding=utf-8
